@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+MAINTAINER FlyerDefenders and contributors
 EXPOSE 8000
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install bash-completion libpq-dev python-dev python-dev build-essential -y
