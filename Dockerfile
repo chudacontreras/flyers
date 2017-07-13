@@ -1,6 +1,5 @@
 FROM ubuntu:16.04
 MAINTAINER FlyerDefenders and contributors
-EXPOSE 8001
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install bash-completion libpq-dev python-dev python-dev build-essential -y
 RUN apt-get install -y libncurses5-dev libxml2-dev libxslt1-dev wget nano vim git git-core 
