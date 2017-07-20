@@ -7,5 +7,11 @@ RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py && pip install --upgrade pip && pip install --no-cache-dir virtualenv
 RUN apt-get install -y postgresql-9.3 postgresql-contrib-9.3 postgis postgresql-9.3-postgis-2.1
 RUN apt-get install -y erlang && apt-get install -y rabbitmq-server
+RUN virtualenv venv
+RUN mkdir /app
+ADD . /app/
+WORKDIR /app
+RUN source ../venv/bin/activate
+RUN pip install -r requirements.txt
 EXPOSE 8000
 CMD /bin/bash
